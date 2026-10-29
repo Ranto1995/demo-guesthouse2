@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- 1. Le "doctype" dit au navigateur : c'est du HTML moderne -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- 2. Cette ligne rend le site adapté au téléphone. Ne l'oublie JAMAIS. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Villa Ravinala – Guesthouse</title>
+  <meta name="description" content="Guesthouse calme et chaleureuse. Chambres, petit-déjeuner, réservation par WhatsApp.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER : le nom + les boutons de langue -->
+  <header class="topbar">
+    <a class="logo" href="#top">Villa Ravinala</a>
+    <!-- data-lang = la langue que le bouton active (lu par script.js) -->
+    <div class="langs" role="group" aria-label="Langue">
+      <button data-lang="fr">FR</button>
+      <button data-lang="mg">MG</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO : la première chose que le visiteur voit -->
+    <section class="hero">
+      <h1 data-i18n="hero_title">Votre maison au calme, à deux pas de la ville</h1>
+      <p data-i18n="hero_text">Chambres propres, petit-déjeuner malgache, accueil chaleureux.</p>
+      <a class="btn" id="wa-main" href="#" data-i18n="cta">Réserver sur WhatsApp</a>
+    </section>
+
+    <!-- CHAMBRES -->
+    <section class="section">
+      <h2 data-i18n="rooms_title">Nos chambres</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 data-i18n="room1_name">Chambre simple</h3>
+          <p data-i18n="room1_desc">1 lit, salle de bain privée, Wi-Fi.</p>
+          <p class="price">60 000 Ar</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="room2_name">Chambre double</h3>
+          <p data-i18n="room2_desc">2 lits ou 1 grand lit, balcon, Wi-Fi.</p>
+          <p class="price">90 000 Ar</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="room3_name">Chambre famille</h3>
+          <p data-i18n="room3_desc">Jusqu'à 4 personnes, petit salon.</p>
+          <p class="price">140 000 Ar</p>
+        </article>
+      </div>
+      <p class="note" data-i18n="price_note">Prix par nuit, petit-déjeuner inclus.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact">
+      <h2 data-i18n="contact_title">Nous contacter</h2>
+      <p data-i18n="contact_text">Écrivez-nous avec vos dates, nous répondons le jour même.</p>
+      <a class="btn" id="wa-second" href="#" data-i18n="cta">Réserver sur WhatsApp</a>
+      <p class="note">+261 34 00 000 00</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Villa Ravinala – <span data-i18n="demo">Site de démonstration</span></footer>
+
+  <!-- Le JS se met en dernier : il peut alors "voir" tout le HTML au-dessus -->
+  <script src="script.js"></script>
+</body>
+</html>

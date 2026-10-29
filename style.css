@@ -1,0 +1,74 @@
+/* 1. VARIABLES : on définit les couleurs UNE fois, on les réutilise partout.
+      Pour changer le style d'un client, on modifie juste ces lignes. */
+:root {
+  --fond: #eef4f1;
+  --texte: #12313a;
+  --principal: #0b4f5c;
+  --accent: #e8b931;
+  --blanc: #ffffff;
+}
+
+/* 2. Reset de base : box-sizing évite que padding + width dépassent l'écran */
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.6;
+}
+
+/* 3. En-tête : flex = éléments alignés sur une ligne */
+.topbar {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, langues à droite */
+  align-items: center;
+  padding: 14px 20px;
+  background: var(--principal);
+}
+.logo { color: var(--blanc); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.langs button {
+  background: transparent; color: var(--blanc);
+  border: 1px solid var(--blanc); border-radius: 6px;
+  padding: 4px 10px; margin-left: 4px; cursor: pointer;
+}
+/* La classe "active" est ajoutée par le JS sur la langue choisie */
+.langs button.active { background: var(--accent); color: var(--texte); border-color: var(--accent); }
+
+/* 4. Hero */
+.hero {
+  padding: 72px 20px;
+  text-align: center;
+  background: var(--principal);
+  color: var(--blanc);
+}
+.hero h1 { font-size: clamp(1.8rem, 6vw, 3rem); max-width: 18ch; margin: 0 auto 16px; line-height: 1.15; }
+.hero p { max-width: 50ch; margin: 0 auto 28px; opacity: .9; }
+
+/* 5. Bouton */
+.btn {
+  display: inline-block; padding: 12px 26px; border-radius: 999px;
+  background: var(--accent); color: var(--texte);
+  font-weight: 700; text-decoration: none;
+}
+.btn:hover, .btn:focus-visible { outline: 3px solid var(--texte); outline-offset: 2px; }
+
+/* 6. Sections */
+.section { padding: 48px 20px; max-width: 960px; margin: 0 auto; }
+.section h2 { margin-bottom: 24px; font-size: 1.8rem; }
+
+/* 7. GRID : s'adapte tout seul au téléphone (1 colonne) et au PC (3 colonnes) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.card { background: var(--blanc); padding: 20px; border-radius: 10px; border-left: 6px solid var(--accent); }
+.card h3 { margin-bottom: 6px; }
+.price { margin-top: 10px; font-weight: 700; color: var(--principal); }
+.note { margin-top: 14px; font-size: .9rem; opacity: .75; }
+
+.contact { text-align: center; }
+.contact p { margin-bottom: 16px; }
+
+footer { text-align: center; padding: 24px; font-size: .85rem; background: var(--texte); color: var(--blanc); }
